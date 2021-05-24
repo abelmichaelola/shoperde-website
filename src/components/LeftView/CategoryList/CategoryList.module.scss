@@ -1,0 +1,50 @@
+.CategoryLists {
+        padding-top: 2rem;
+        .TitleHolder {
+          display: flex;
+          align-content: center;
+          align-items: center;
+          .Title {
+            flex-grow: 1;
+            font-size: 1.2rem;
+            font-family: var(--fontTypeBold), Courier, monospace;
+            cursor: pointer;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+          .MoreButton {
+            font-weight: 600;
+            cursor: pointer;
+            &:hover {
+              text-decoration: underline;
+            }
+            &:active {
+              font-weight: 600;
+            }
+          }
+        }
+
+        .Item {
+          display: flex;
+          align-items: center;
+          padding: 1rem 1rem 1rem 1rem;
+          margin-top: 0.5rem;
+          border-radius: var(--borderRadius);
+          // background-color: var(--secondary_color_bg_trans);
+          font-size: larger;
+          font-weight: 600;
+          cursor: pointer;
+          &:hover {
+            background-color: var(--secondary_color_bg_trans);
+          }
+          &:active {
+            background-color: var(--secondary_color);
+            color: var(--primary_color);
+          }
+          &.active {
+            background-color: var(--secondary_color);
+            color: var(--primary_color);
+          }
+        }
+      }

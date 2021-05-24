@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import styles from "./App.module.scss";
+import { BUTTON_TYPES, Button } from "./components/ui/Button/Button";
+import Header from "./components/Header/Header";
+import HomePage from "./components/HomePage/HomePage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+interface Props {}
+interface State {}
+
+class App extends Component<Props, State> {
+  state = {};
+
+  render() {
+    return (
+      <div className={styles.App}>
+        <Header />
+        <HomePage />
+        <Button type={BUTTON_TYPES.TYPE_1} text="View More" visibility="gone" />
+      </div>
+    );
+  }
 }
 
 export default App;

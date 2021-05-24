@@ -1,0 +1,121 @@
+.Header {
+  height: var(--headerHeight);
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: var(--secondary_color_bg_trans);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  .HeaderItems {
+    width: stretch;
+    display: grid;
+    &.leftSide {
+      align-items: center;
+      display: flex;
+      .appIconHolder {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        font-family: var(--fontTypeBold), Courier, monospace;
+        .appLogo {
+          width: 3rem;
+          height: 5min;
+          padding-right: 0.5rem;
+        }
+      }
+      .searchHolder {
+        width: stretch;
+        display: flex;
+        margin: 1rem;
+        background-color: var(--secondary_color_bg_trans);
+        border-radius: var(--borderRadius);
+        .searchInputField {
+          z-index: 0;
+          background: transparent;
+          width: stretch;
+          //   min-width: 10rem;
+          padding-left: 2rem;
+          border: transparent;
+          height: 3rem;
+        }
+        .searchBtn {
+          height: 3rem;
+          width: 4rem;
+          display: grid;
+          justify-content: center;
+          align-content: center;
+          cursor: pointer;
+          border-radius: 0 var(--borderRadius) var(--borderRadius) 0;
+          &:hover {
+            background-color: var(--secondary_color_bg);
+            color: var(--primary_color);
+          }
+          &:active {
+            background-color: var(--primary_color);
+            color: var(--secondary_color_bg);
+          }
+        }
+      }
+    }
+    &.center {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+
+      @media only screen and (min-width: 991px) {
+        & {
+          //   display: none;
+          position: relative;
+          bottom: auto;
+          left: auto;
+          right: auto;
+          display: flex;
+        }
+      }
+      @media only screen and (min-width: 1201px) {
+        & {
+          //   display: none;
+          position: relative;
+          bottom: auto;
+          left: auto;
+          right: auto;
+          display: flex;
+          padding-left: 8rem;
+          padding-right: 8rem;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 991px) {
+    .HeaderItems.leftSide {
+      .searchHolder {
+        display: none;
+      }
+    }
+  }
+  @media only screen and (min-width: 991px) and (max-width: 1245px) {
+    & {
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+  }
+
+  @media only screen and (min-width: 1246px) {
+    & {
+      grid-template-columns: 1fr 2fr 1fr;
+      //   grid-template-columns: 30% auto 30%;
+    }
+  }
+}

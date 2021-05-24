@@ -1,0 +1,94 @@
+.BottomNavigation {
+  // height: calc(var(--headerHeight) - 1rem);
+  height: var(--headerHeight);
+  position: relative;
+  background-color: var(--primary_color_bg);
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-auto-flow: column;
+  // grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 20%);
+  gap: 0rem;
+  width: stretch;
+  .BtmNavItem {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    // padding: 1rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    opacity: 0.5;
+    .title {
+      margin-left: 0rem;
+    }
+
+     @media only screen and (min-width: 991px) {
+    & {
+      .title{
+      padding-top: 0.5rem;
+      display: none;
+      }
+    &.active {
+    font-size: 2rem !important;
+    opacity: 1;
+      .title{
+      font-size: larger !important;
+      }
+    }
+    }
+  }
+
+  }
+
+  @media only screen and (max-width: 767px) {
+     & {
+      .BtmNavItem {
+        
+    &.active {
+    font-size: 1.8rem !important;
+    opacity: 1;
+    }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    & {
+      .BtmNavItem {
+        flex-direction: row;
+        .title {
+          margin-left: 0.5rem;
+        }
+        
+    &.active {
+    font-size: 1.1rem !important;
+    opacity: 1;
+      .title{
+      font-size: larger !important;
+      }
+    }
+      }
+    }
+  }
+
+  @media screen and (min-width: 991px) {
+    & {
+      grid-template-columns: repeat(4, 1fr);
+      // display: none;
+      width: stretch;
+      background-color: transparent;
+      .BtmNavItem {
+        &.searchItem {
+          display: none;
+        }
+        flex-direction: column;
+        .title {
+          margin-left: 0rem;
+        }
+      }
+    }
+  }
+}

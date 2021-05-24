@@ -1,0 +1,81 @@
+:root {
+  --primary_color_bg: #ffffff;
+  --secondary_color_bg: #000000;
+
+  --secondary_color_bg_trans: #00000025;
+  --placeholder_color: #0000005e;
+
+  --primary_color: #ffffff;
+  --secondary_color: #000000;
+
+  --danger_color: #ff0808be;
+  --success_color: #08ff98be;
+
+  --transition_duration: 200ms;
+  --header_height: 4.0rem;
+  --primary_padding: 0.02rem;
+    --headerHeight: 4.5rem;
+    --borderRadius: 1rem;
+}
+
+* {
+  font-size: x-small;
+  box-sizing: border-box;
+  font-weight: 400;
+  transition: var(--transition_duration);
+  overflow-y: hidden;
+  a{
+    text-decoration: none;
+  }
+  @media screen and (min-width: 991px) {
+  font-weight: 400;
+  font-size: 0.8rem;
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+  font-weight: 400;
+  font-size: small;
+  }
+}
+
+
+.normalText{
+    font-family: var(--fontType), Courier, monospace;
+}
+.boldText{
+    font-family: var(--fontTypeBold), Courier, monospace;
+}
+.xBoldText{
+    font-family: var(--fontTypeXBold), Courier, monospace;
+}
+.blackText{
+    font-family: var(--fontTypeBlack), Courier, monospace;
+}
+
+body {
+  background-color: var(--primary_color_bg);
+}
+::placeholder {
+  color: var(--placeholder_color);
+}
+
+textarea:focus, input:focus{
+  outline: var(--placeholder_color);
+}
+
+.bottomNavHolder{
+    background-color: var(--primary_color_bg);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    @media only screen and (min-width: 600px) and (max-width: 767px) {
+
+}
+
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+  }

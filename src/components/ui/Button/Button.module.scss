@@ -1,0 +1,67 @@
+.Btn {
+  display: inline-block;
+  padding: 1rem;
+  cursor: pointer;
+  width: auto;
+  text-align: center;
+  display: none;
+}
+.Button1 {
+  &:hover {
+    background-color: var(--secondary_color_bg) !important;
+    color: var(--primary_color) !important;
+  }
+  &:active {
+    background-color: var(--primary_color_bg) !important;
+    color: var(--secondary_color) !important;
+  }
+
+  &.active {
+    background-color: var(--secondary_color_bg) !important;
+    color: var(--primary_color) !important;
+  }
+}
+
+.Button1_bordered {
+  border: 2px solid var(--secondary_color_bg) !important;
+  &:hover {
+    background-color: var(--secondary_color_bg) !important;
+    color: var(--primary_color) !important;
+  }
+  &:active {
+    background-color: var(--primary_color_bg) !important;
+    color: var(--secondary_color) !important;
+  }
+}
+
+.Button2 {
+  &:hover {
+    background-color: var(--primary_color_bg) !important;
+    color: var(--secondary_color) !important;
+  }
+  &:active {
+    background-color: var(--secondary_color_bg) !important;
+    color: var(--primary_color) !important;
+  }
+
+  &.active {
+    background-color: var(--secondary_color_bg) !important;
+    color: var(--primary_color) !important;
+  }
+}
+
+.Button3 {
+  &:hover {
+    background-color: var(--primary_color_bg) !important;
+    color: var(--secondary_color) !important;
+  }
+  &:active {
+    background-color: var(--secondary_color_bg_trans) !important;
+    color: var(--secondary_color) !important;
+  }
+
+  &.active {
+    background-color: var(--secondary_color_bg_trans) !important;
+    color: var(--secondary_color) !important;
+  }
+}

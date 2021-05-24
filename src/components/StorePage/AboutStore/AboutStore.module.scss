@@ -1,0 +1,84 @@
+.AboutStore {
+  height: 100%;
+  .StoreBGImage {
+    border-radius: var(--borderRadius);
+    background-color: var(--secondary_color_bg_trans);
+    height: 10rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+    z-index: 0 !important;
+    .BgImage {
+      border-radius: var(--borderRadius);
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+      filter: blur(0.1rem) grayscale(0%) brightness(100%);
+      -webkit-filter: blur(90%);
+        background-color: red;
+    }
+    .Body {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .storeName {
+        padding: 1rem;
+        text-align: center;
+        font-size: 2rem;
+        font-family: var(--fontTypeBold), Courier, monospace;
+      }
+      .storeDet {
+        text-align: center;
+      }
+    }
+  }
+  .Body {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .storeLogoHolder {
+      width: 100%;
+      display: block;
+      text-align: center;
+      z-index: 100;
+      margin-top: 1rem;
+
+      .storeLogo {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 5rem;
+        display: inline-block;
+        justify-self: center;
+        justify-items: center;
+        text-align: center;
+        z-index: 20000 !important;
+        background-color: red;
+        background-size: cover;
+      }
+    }
+    .storeName {
+      padding: 0.5rem 1rem 0.5rem 1rem;
+      text-align: center;
+      font-size: 2rem;
+      font-family: var(--fontTypeBold), Courier, monospace;
+    }
+    .storeDet {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    a.storeWebLink {
+      padding: 0.5rem 1rem 0.5rem 1rem;
+      color: #137484;
+      display: flex;
+      justify-content: center;
+      justify-self: right;
+      text-align: right;
+    }
+  }
+}

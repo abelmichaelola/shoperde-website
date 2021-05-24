@@ -1,0 +1,29 @@
+.StorePage {
+  .navBar {
+    display: grid;
+    grid-column-gap: 2rem;
+    grid-template-columns: auto auto auto auto;
+    .navBarItem {
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: 900;
+      text-align: center;
+      border-radius: var(--borderRadius);
+cursor: pointer;
+      &:hover {
+        background-color: var(--secondary_color_bg_trans);
+      }
+      &:active {
+        background-color: var(--secondary_color);
+        color: var(--primary_color);
+      }
+      &.active {
+        background-color: var(--secondary_color);
+        color: var(--primary_color);
+      }
+    }
+  }
+  .mainView{
+      margin: 1rem;
+  }
+}
