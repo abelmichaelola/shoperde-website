@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import styles from "./HomePage.module.scss";
 import logo from "./../../assets/logo.png";
 import CategoryList from "../LeftView/CategoryList/CategoryList";
