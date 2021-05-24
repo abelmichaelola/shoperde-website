@@ -2,7 +2,7 @@
   .navBar {
     display: grid;
     grid-column-gap: 2rem;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto;
     .navBarItem {
       padding: 1rem;
       font-size: 1rem;
@@ -24,6 +24,13 @@ cursor: pointer;
     }
   }
   .mainView{
-      margin: 1rem;
+      margin: 0.5rem;
+      display: block;
+      height: 70rem;
+      padding-bottom: 10rem;
+      overflow-y: scroll;
+      &::-webkit-scrollbar{
+        display: none;
+      }
   }
 }

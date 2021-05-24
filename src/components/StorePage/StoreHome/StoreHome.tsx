@@ -10,11 +10,17 @@ class StoreHome extends Component<Props, State> {
   storeId: string;
   constructor(props: Props) {
     super(props);
-    this.storeId = this.props.match;
+    this.storeId = this.props.match.params.storeId;
+  }
+
+  componentWillReceiveProps(nextProps: Props) {
+    this.storeId = nextProps.match.params.storeId;
     console.log("====================================");
     console.log(this.storeId);
     console.log("====================================dab");
   }
+
+
   render() {
     return <div className={styles.StoreHome}>StoreHome Component</div>;
   }

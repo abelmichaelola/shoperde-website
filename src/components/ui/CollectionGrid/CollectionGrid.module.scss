@@ -1,0 +1,48 @@
+.CollectionGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: center;
+    margin-top: 1rem;
+    justify-content: center;
+    gap: 1rem;
+    .item {
+      display: inline-block;
+      width: calc(33.33% - 1rem);
+      border-radius: var(--borderRadius);
+      cursor: pointer;
+      display: flex;
+      margin-top: 2rem;
+      flex-direction: column;
+      .image {
+        background-size: cover;
+        object-position: center;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: var(--borderRadius);
+        height: 25rem;
+      }
+      .body {
+        flex-direction: column;
+        .title {
+          font-size: 1.8rem;
+          font-family: var(--fontTypeBold);
+          font-weight: 800;
+          margin: 0.5rem;
+        }
+        .text{
+          font-size: 1.3rem;
+          margin: 0.5rem;
+        }
+      }
+      &:hover {
+        opacity: 0.5;
+      }
+      &:active {
+        opacity: 1;
+      }
+      &.active {
+        background-color: var(--secondary_color);
+        color: var(--primary_color);
+      }
+    }
+  }

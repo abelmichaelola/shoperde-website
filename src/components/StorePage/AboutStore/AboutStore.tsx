@@ -16,7 +16,7 @@ export class AboutStore extends Component<Props, State> {
   storeId:string;
   constructor(props: Props) {
     super(props);
-    this.storeId = this.props.match.params.storeId;
+    this.storeId = this.props.match ? this.props.match.params.storeId : null;
   }
 
   render() {

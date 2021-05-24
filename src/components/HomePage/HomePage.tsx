@@ -82,8 +82,9 @@ class HomePage extends Component<Props, State> {
 
         <div className={styles.HomepageColumn + " " + styles.rightSide}>
           <Switch>
-              <Route path="/store/:storeId" component={AboutStore} exact />
+            <Route path="/store/:storeId" component={AboutStore} />
           </Switch>
+          {/* <AboutStore /> */}
         </div>
       </div>
     );
