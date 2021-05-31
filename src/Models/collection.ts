@@ -1,14 +1,16 @@
 import { Creator } from "../Controllers/Creator";
-import Product from "./Product";
+import Product, { Media } from "./Product";
 
 export class Collection {
+  id?:string;
   name?: string;
   about?: string;
   dateCreated?: string;
   productCount?: number;
   creator?: Creator;
+  media?: [Media];
+  coverImage?: string;
   products?: CollectionProduct[];
-
 }
 
 export class CollectionProduct extends Product {

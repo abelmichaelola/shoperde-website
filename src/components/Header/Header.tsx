@@ -1,16 +1,13 @@
-import React, { Component } from 'react'
-import styles from './Header.module.scss';
+import React, { Component } from "react";
+import styles from "./Header.module.scss";
 import logo from "./../../assets/logo512.png";
-import BottomNavigation from '../BottomNavigation/BottomNavigation';
-interface Props {
-  
-}
-interface State {
-  
-}
+import BottomNavigation from "../BottomNavigation/BottomNavigation";
+import { BsSearch } from "react-icons/bs";
+interface Props {}
+interface State {}
 
 class Header extends Component<Props, State> {
-  state = {}
+  state = {};
   render() {
     return (
       <div className={styles.Header}>
@@ -24,16 +21,14 @@ class Header extends Component<Props, State> {
           <div className={styles.searchHolder}>
             <input className={styles.searchInputField} placeholder={"SEARCH"} />
             <div className={styles.searchBtn}>
-              <i className="fa fal fa-search" />
+              <BsSearch size={"1.3rem"} className={styles.searchIcon} />
             </div>
           </div>
         </div>
         <div className={styles.HeaderItems + " " + styles.center}>
           <BottomNavigation />
         </div>
-        <div className={styles.HeaderItems}>
-          right
-        </div>
+        <div className={styles.HeaderItems}>right</div>
       </div>
     );
   }

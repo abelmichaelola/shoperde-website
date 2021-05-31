@@ -38,7 +38,7 @@ class ConfigurationValue {
   featureId?: number;
   valueId?: number;
 }
-class Media {
+ export class Media {
 type?: MediaType;
 link?: string;
 }

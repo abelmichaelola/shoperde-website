@@ -17,10 +17,8 @@ class CollectionGrid extends Component<Props, State> {
       (value: Collection, index: number) => {
         return (
           <Item
+          collection={value}
             key={index}
-            image={"http://localhost/images/img (1).jpg"}
-            title={"Sandals"}
-            text={"slide into summer"}
             url={this.props.match.url}
           />
         );
@@ -33,18 +31,18 @@ class CollectionGrid extends Component<Props, State> {
     );
   }
 }
-
-const Item = (props: any) => {
+const Item = (props: {collection:Collection, url:any}) => {
   return (
     <div className={styles.item}>
       <Link to={props.url + "/collection/200"}>
-        <div
+        <img
           className={styles.image}
-          style={{ backgroundImage: `url("` + props.image + `")` }}
+          src={props.collection.coverImage}
+          alt={"collection cover"}
         />
         <div className={styles.body}>
-          <div className={styles.title}>{props.title}</div>
-          <div className={styles.text}>{props.text}</div>
+          <div className={styles.title}>{props.collection.name}</div>
+          <div className={styles.text}>{props.collection.about}</div>
         </div>
       </Link>
     </div>

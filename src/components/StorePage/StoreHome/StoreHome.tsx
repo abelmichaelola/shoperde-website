@@ -22,6 +22,7 @@ class StoreHome extends Component<Props, State> {
     this.storeId = this.props.match.params.storeId;
     this.state = {};
   }
+
 componentDidMount(){
     GetCollections((collections: Collection[]) => {
       this.listItems = collections?.map(this.mapper);
@@ -30,6 +31,7 @@ componentDidMount(){
       });
     });
 }
+
   mapper = (data: Collection, index: number) => {
     return (
       <GroupedView
@@ -65,7 +67,6 @@ componentDidMount(){
           </div>
         </div>
         {this.listItems}
-        {/* <GroupedView data={this.allData.} /> */}
       </div>
     );
   }

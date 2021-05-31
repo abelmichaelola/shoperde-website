@@ -36,7 +36,6 @@ class CollectionPage extends Component<Props, State> {
             />
           ),
         });
-    console.log(collection);
       }
     );
   }

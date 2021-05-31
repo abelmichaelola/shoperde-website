@@ -6,6 +6,7 @@ import CategoryList from "../LeftView/CategoryList/CategoryList";
 import BookmarksList from "../LeftView/BookmarksList/BookmarksList";
 import AboutStore from "../StorePage/AboutStore/AboutStore";
 import StorePage from "../StorePage/StorePage";
+import HomeMainPage from "../HomeMainPage/HomeMainPage";
 
 interface Props {
   text?: string;
@@ -77,12 +78,15 @@ class HomePage extends Component<Props, State> {
         <div className={styles.HomepageColumn + " " + styles.center}>
           <Switch>
             <Route path="/store/:storeId" component={StorePage} />
+            <Route path="/home" component={HomeMainPage} />
+            <Route component={HomeMainPage} />
           </Switch>
         </div>
 
         <div className={styles.HomepageColumn + " " + styles.rightSide}>
           <Switch>
             <Route path="/store/:storeId" component={AboutStore} />
+            <Route component={HomeMainPage} />
           </Switch>
           {/* <AboutStore /> */}
         </div>

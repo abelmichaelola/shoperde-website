@@ -12,7 +12,7 @@
   margin: var(--primary_padding);
   .HomepageColumn {
     &.leftSide {
-      width: 15%;
+      width: 20%;
       background-color: var(--primary_color);
       overflow-y: scroll;
       scrollbar-width: none;
@@ -111,7 +111,7 @@
     }
     &.center {
       background-color: transparent;
-      width: 65%;
+      width: 60%;
       margin-left: 1rem;
       margin-right: 1rem;
     }

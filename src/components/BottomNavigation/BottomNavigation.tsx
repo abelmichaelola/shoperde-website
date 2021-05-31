@@ -1,5 +1,12 @@
 import styles from './BottomNavigation.module.scss';
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import {
+  BsHouseDoorFill,
+  BsCompass,
+  BsSearch,
+  BsClipboard,
+  BsFillPersonFill,
+} from "react-icons/bs";
 
 interface Props {
   
@@ -74,24 +81,46 @@ setStyles(activeBtnText: string) {
   render() {
     return (
       <div className={styles.BottomNavigation}>
-        <div className={styles.BtmNavItem + " " + this.setStyles("Home")} onClick={this.setHome}>
-          <i className="fa fal fa-home" />
+        <div
+          className={styles.BtmNavItem + " " + this.setStyles("Home")}
+          onClick={this.setHome}
+        >
+          <BsHouseDoorFill size={"2rem"} />
           <div className={styles.title}>Home</div>
         </div>
-        <div className={styles.BtmNavItem + " " + this.setStyles("Explore")} onClick={this.setExplore}>
-          <i className="fa fal fa-compass fa-1x fa-fw" />
+
+        <div
+          className={styles.BtmNavItem + " " + this.setStyles("Explore")}
+          onClick={this.setExplore}
+        >
+          <BsCompass size={"2rem"} />
           <div className={styles.title}>Explore</div>
         </div>
-        <div className={styles.BtmNavItem + " " + this.setStyles("Search") + " " + styles.searchItem} onClick={this.setSearch}>
-          <i className="fa fal fa-search fa-1x fa-fw" />
+        <div
+          className={
+            styles.BtmNavItem +
+            " " +
+            this.setStyles("Search") +
+            " " +
+            styles.searchItem
+          }
+          onClick={this.setSearch}
+        >
+          <BsSearch size={"2rem"} />
           <div className={styles.title}>Search</div>
         </div>
-        <div className={styles.BtmNavItem + " " + this.setStyles("Board")} onClick={this.setBoard}>
-          <i className="fa fal fa-clipboard fa-1x fa-fw" />
+        <div
+          className={styles.BtmNavItem + " " + this.setStyles("Board")}
+          onClick={this.setBoard}
+        >
+          <BsClipboard size={"2rem"} />
           <div className={styles.title}>Board</div>
         </div>
-        <div className={styles.BtmNavItem + " " + this.setStyles("Account")} onClick={this.setAccount}>
-          <i className="fa fal fa-user fa-1x fa-fw" />
+        <div
+          className={styles.BtmNavItem + " " + this.setStyles("Account")}
+          onClick={this.setAccount}
+        >
+          <BsFillPersonFill size={"2rem"} />
           <div className={styles.title}>Account</div>
         </div>
       </div>
