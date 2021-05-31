@@ -1,0 +1,66 @@
+.StoreList {
+  width: 100%;
+  height: auto;
+
+  .item {
+    display: flex;
+    width: 95%;
+    height: 5rem;
+    margin: 1rem;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    cursor: pointer;
+            border-radius: var(--borderRadius1);
+    .isHQ{
+        width: auto;
+        height: auto;
+        background-color:var(--secondary_color);
+        color:var(--primary_color);
+        padding: 0.2rem;
+        margin: 0.2rem;
+        font-weight: 900;
+        overflow: hidden;
+        align-self: flex-start;
+        float: right;
+            border-radius: var(--borderRadius);
+    }
+    .image {
+      width: 3rem;
+      height: 3rem;
+      margin: 0.5rem;
+      background-color: rebeccapurple;
+      object-position: center;
+      object-fit: cover;
+      border-radius: var(--borderRadius);
+    }
+    .body {
+      margin: 0.5rem;
+      width: auto;
+      .name {
+        font-size: 1.2rem;
+        font-family: var(--fontTypeBold), Courier, monospace;
+        margin: 0.5rem;
+      }
+      .location {
+        font-size: 1rem;
+        margin: 0.5rem;
+        font-weight: 900;
+        max-lines: 1;
+        text-overflow: ellipsis;
+      }
+    }
+    &:hover {
+      background-color: var(--secondary_color);
+      color: var(--primary_color);
+      .body {
+        .name {
+          color: var(--primary_color);
+        }
+        .location {
+          color: var(--primary_color);
+        }
+      }
+    }
+  }
+}

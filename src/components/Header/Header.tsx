@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import styles from './Header.module.scss';
 import logo from "./../../assets/logo512.png";
 import BottomNavigation from '../BottomNavigation/BottomNavigation';
-import { BUTTON_TYPES, Button } from "./../ui/Button/Button";
 interface Props {
   
 }
@@ -34,10 +33,6 @@ class Header extends Component<Props, State> {
         </div>
         <div className={styles.HeaderItems}>
           right
-          <Button
-            type={BUTTON_TYPES.TYPE_1}
-            text="View More"
-          />
         </div>
       </div>
     );

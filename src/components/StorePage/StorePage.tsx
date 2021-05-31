@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 import { Route, Switch, Link } from "react-router-dom";
+import { GetStore } from "../../data/StoreData";
+import Store from "../../Models/Store";
+import CollectionPage from "../CollectionPage/CollectionPage";
+import ProductPage from "../ProductPage/ProductPage";
 import StoreCollections from "./StoreCollections/StoreCollections";
 import StoreHome from "./StoreHome/StoreHome";
 import styles from "./StorePage.module.scss";
+import StoreProducts from "./StoreProducts/StoreProducts";
 
 interface Props {
   match?: any;
@@ -11,39 +16,64 @@ interface Props {
 
 interface State {
   activePage?: string;
+  store?: Store;
 }
 
 class StorePage extends Component<Props, State> {
   storeId: string;
   currentProp?: Props;
+  state = {
+      activePage: "Home",
+    };
   constructor(props: Props) {
     super(props);
     this.currentProp = this.props;
     this.storeId = this.props.match.params.storeId;
     this.setActivePage = this.setActivePage.bind(this);
+    
     this.state = {
-      activePage: "Home",
+      activePage: this.handleNav(this.props.location.pathname),
     };
-    this.state = {
-      activePage: this.hand(this.props.location.pathname),
-    };
+
   }
-  hand(pathname?: string) {
+  componentDidMount(){
+    new GetStore().get(this.storeId, (store: Store) => {
+      // this.listItems = collections?.map(this.mapper);
+      this.setState({
+        store: store,
+      });
+    });
+  }
+  handleNav(pathname?: string) {
     switch (pathname) {
+      case "/store/" + this.storeId + "/products":
+        return "Products";
       case "/store/" + this.storeId + "/collections":
         return "Collections";
+      case "/store/" + this.storeId + "/events":
+        return "Events";
 
-      default:
+      default:{
         return "Home";
+      }
     }
   }
-  componentWillReceiveProps(nextProps: Props) {
+
+  shouldComponentUpdate(
+    nextProps: Readonly<Props>,
+    nextState: Readonly<State>,
+    nextContext: any
+  ) {
     if (this.currentProp !== nextProps) {
       this.currentProp = nextProps;
       this.storeId = nextProps.match.params.storeId;
-      this.setActivePage(this.hand(nextProps.location.pathname));
     }
+    if(nextState.activePage !== this.state.activePage){
+      this.setActivePage(this.handleNav(nextProps.location.pathname));
+    }
+    return true;
   }
+
   setActivePage = (id?: string) => {
     this.setState({
       activePage: id,
@@ -59,6 +89,14 @@ class StorePage extends Component<Props, State> {
               id={0}
               title={"Home"}
               isActive={this.state.activePage === "Home" ? true : false}
+              handleClick={this.setActivePage}
+            />
+          </Link>
+          <Link to={this.currentProp?.match.url + "/products"}>
+            <NavBarItem
+              id={1}
+              title={"Products"}
+              isActive={this.state.activePage === "Products" ? true : false}
               handleClick={this.setActivePage}
             />
           </Link>
@@ -92,11 +130,31 @@ class StorePage extends Component<Props, State> {
         <div className={styles.mainView}>
           <Switch>
             <Route
+              path="/store/:storeId/*/product/:productId"
+              component={ProductPage}
+            />
+            <Route
+              path="/store/:storeId/product/:productId"
+              component={ProductPage}
+            />
+
+            <Route
+              path="/store/:storeId/*/collection/:collectionId"
+              component={CollectionPage}
+            />
+            <Route
+              path="/store/:storeId/collection/:collectionId"
+              component={CollectionPage}
+            />
+
+            <Route path="/store/:storeId/products" component={StoreProducts} />
+            <Route
               path="/store/:storeId/collections"
               component={StoreCollections}
             />
             <Route path="/store/:storeId/home" component={StoreHome} />
-            <Route component={StoreCollections} />
+            <Route path="/store/:storeId" component={StoreHome} />
+            <Route component={StoreHome} />
           </Switch>
         </div>
       </div>

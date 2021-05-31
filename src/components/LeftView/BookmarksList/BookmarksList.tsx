@@ -112,8 +112,7 @@ class BookmarksList extends React.Component {
     );
   }
 }
-
-const Item = (props: any) => {
+export const Item = (props: any) => {
   return (
     <Link to={"/store/" + props.id}>
       <div

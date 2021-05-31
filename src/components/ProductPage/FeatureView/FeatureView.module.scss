@@ -1,0 +1,43 @@
+.FeatureView {
+   
+      fieldset {
+        font-size: 1.2rem;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 1rem;
+        border: 0.1rem solid var(--secondary_color);
+        border-radius: var(--borderRadius1);
+        legend {
+          font-weight: 900;
+          font-size: 1.2rem;
+        }
+
+        .Item {
+          width: fit-content;
+          align-items: center;
+          padding: 0.5rem 1rem 0.5rem 1rem;
+          margin: 0.5rem;
+          border-radius: var(--borderRadius);
+          text-decoration: none !important;
+          // background-color: var(--secondary_color_bg_trans);
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          background-color: var(--secondary_color_bg_trans);
+          color: var(--secondary_color);
+
+          &:hover {
+            background-color: var(--secondary_color);
+            color: var(--primary_color);
+          }
+          &:active {
+            background-color: var(--secondary_color_bg_trans);
+            color: var(--secondary_color);
+          }
+          &.active {
+            background-color: var(--secondary_color);
+            color: var(--primary_color);
+          }
+        }
+      }
+}

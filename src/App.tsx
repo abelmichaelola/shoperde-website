@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styles from "./App.module.scss";
-import { BUTTON_TYPES, Button } from "./components/ui/Button/Button";
 import Header from "./components/Header/Header";
 import HomePage from "./components/HomePage/HomePage";
 
@@ -15,7 +14,6 @@ class App extends Component<Props, State> {
       <div className={styles.App}>
         <Header />
         <HomePage />
-        <Button type={BUTTON_TYPES.TYPE_1} text="View More" visibility="gone" />
       </div>
     );
   }

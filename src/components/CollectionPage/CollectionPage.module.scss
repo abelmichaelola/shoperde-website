@@ -1,0 +1,27 @@
+.CollectionPage {
+  .topView {
+    padding-top: 0.5rem;
+    width: 100%;
+    img {
+      width: inherit;
+      height: 30vh;
+      border-radius: var(--borderRadius1);
+      object-position: center;
+      object-fit: cover;
+    }
+  }
+  .titleView {
+    padding: 1rem 1rem 0.5rem 1rem;
+    .titleText {
+      font-size: 2.5rem;
+      font-weight: 900;
+    }
+    .subTitleText {
+      font-size: 1.2rem;
+      font-weight: 700;
+      width: 70%;
+      margin: 0.5rem 0rem 0rem 0.5rem;
+      line-height: 1.3rem;
+    }
+  }
+}

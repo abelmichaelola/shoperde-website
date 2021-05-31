@@ -1,8 +1,43 @@
 import React, { Component } from "react";
+import { GetCollections } from "../../../data/CollectionData";
+import { Collection } from "../../../Models/collection";
 import CollectionGrid from "../../ui/CollectionGrid/CollectionGrid";
 import styles from "./StoreCollections.module.scss";
 
-export class StoreCollections extends Component {
+interface Props {
+  match?: any;
+  location?: any;
+}
+interface State {
+  collectionsView?: any;
+}
+export class StoreCollections extends Component<Props, State> {
+  collections: Collection[];
+  constructor(props: Props) {
+    super(props);
+    this.collections = [];
+    this.state = {
+      collectionsView: undefined,
+    };
+  }
+
+  componentDidMount() {
+    if (this.state.collectionsView === undefined) {
+      GetCollections((collections: Collection[]) => {
+        this.collections = collections;
+        this.setState({
+          collectionsView: (
+          <CollectionGrid
+            match={this.props.match}
+            location={this.props.location}
+            collections={collections}
+          />
+        ),
+        });
+      });
+    }
+  }
+
   render() {
     return (
       <div className={styles.StoreCollections}>
@@ -17,8 +52,7 @@ export class StoreCollections extends Component {
             <div className={styles.sub}>Shop the Collection</div>
           </div>
         </div>
-
-        <CollectionGrid />
+        {this.state.collectionsView}
       </div>
     );
   }
