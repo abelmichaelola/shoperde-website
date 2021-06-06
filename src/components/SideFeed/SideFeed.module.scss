@@ -1,0 +1,25 @@
+.SideFeed {
+    display: flex;
+  .section2{
+      flex-grow: auto; 
+  .top {
+    white-space: nowrap;
+    overflow-x: scroll;
+    width: inherit;
+    .topItem {
+      width: auto;
+      height: 5rem;
+      margin: 0rem 0.5rem 0.5rem 0.5rem;
+      display: inline-block;
+      background-color: var(--secondary_color);
+    border-radius: var(--borderRadius);
+      img {
+        width: 5rem;
+      height: 5rem;
+        object-position: center;
+        object-fit: contain;
+      }
+    }
+  } 
+  }
+}

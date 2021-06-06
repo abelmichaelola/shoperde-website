@@ -1,8 +1,8 @@
-import { Creator } from "../Controllers/Creator";
+import { Creator } from "./Creator";
 import Product, { Media } from "./Product";
 
 export class Collection {
-  id?:string;
+  id?:number;
   name?: string;
   about?: string;
   dateCreated?: string;
@@ -18,5 +18,17 @@ export class CollectionProduct extends Product {
   constructor(product: Product, dateAdded: string) {
     super();
     this.dateAdded = dateAdded;
+  }
+}
+
+
+export class CollectionGroup {
+  id?:number;
+  title?: string;
+  collections?: Collection[];
+  constructor(id:number, title:string, collections:Collection[]) {
+    this.id = id;
+    this.title = title;
+    this.collections = collections;
   }
 }

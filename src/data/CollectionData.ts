@@ -1,12 +1,12 @@
 import { Collection } from "../Models/collection";
 
    export function GetCollection(id: number, callback: Function): any {
-     var collection: Collection = new Collection();
+     
+     let collection: Collection = new Collection();
      fetch("http://localhost/data/collection.json", { mode: "cors" })
        .then((response) => response.json())
        .then((data) => {
          Object.assign(collection, data);
-         
          callback(collection);
        });
 

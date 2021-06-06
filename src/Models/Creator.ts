@@ -10,4 +10,5 @@ export class Creator {
 export enum CreatorType {
   Store,
   User,
+  Admin
 }

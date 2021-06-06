@@ -1,0 +1,55 @@
+.CartSidePage {
+    height: inherit;
+    overflow-y: scroll;
+  .topView {
+    height: 10rem;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--borderRadius);
+    .Title {
+      background-color: var(--primary_color);
+      font-size: 2rem;
+      padding: 0.5rem;
+      width: fit-content;
+      height: fit-content;
+      font-weight: 900;
+      border-radius: var(--borderRadius);
+      margin: 0.5rem;
+  font-family: var(--fontTypeBold), Courier, monospace;
+    }
+  }
+  .ListHolder {
+    width: 100%;
+    padding-top: 1rem;
+    .item {
+      width: 100%;
+      cursor: pointer;
+      &:hover{
+          opacity: 0.5;
+      }
+      .cartTitle{
+          font-size: 1.3rem;
+      }
+      .ItemsHolder {
+        display: flex;
+        flex-wrap: wrap;
+
+        .tag {
+          width: fit-content;
+          align-items: center;
+          padding: 0.5rem;
+          text-decoration: none !important;
+          font-size: 0.9rem;
+          font-weight: 600;
+          // background-color: var(--secondary_color_bg_trans);
+          color: var(--secondary_color);
+          border-radius: var(--borderRadius);
+        }
+      }
+    }
+  }
+}

@@ -37,7 +37,7 @@ componentDidMount(){
       <GroupedView
         key={index}
         data={data}
-        dataType={ModelType.Collection}
+        dataType={ModelType.COLLECTION}
         match={this.props.match}
         location={this.props.location}
       />

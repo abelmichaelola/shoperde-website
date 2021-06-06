@@ -1,17 +1,4 @@
 :root {
-  --primary_color_bg: #000000;
-  --secondary_color_bg: #ffffff;
-
-  --primary_color_bg_trans: #000000ec;
-  --secondary_color_bg_trans: #ffffff25;
-  --placeholder_color: #ffffff5e;
-
-  --primary_color: #000000;
-  --secondary_color: #ffffff;
-
-  --danger_color: #ff0808be;
-  --success_color: #08ff98be;
-  --link_color: #13d8f6;
 
   --transition_duration: 100ms;
   --header_height: 4rem;
@@ -21,17 +8,34 @@
   --borderRadius1: 0rem;
   --hoverOpacity: 0.7;
 
-  //     --primary_color_bg: #ffffff;
-  // --secondary_color_bg: #000000;
+      --primary_color_bg: #ffffff;
+  --secondary_color_bg: #000000;
 
-  // --secondary_color_bg_trans: #00000025;
-  // --placeholder_color: #0000005e;
+  --primary_color_bg_trans: #ffffffec;
+  --secondary_color_bg_trans: #00000025;
+  --placeholder_color: #0000005e;
 
-  // --primary_color: #ffffff;
-  // --secondary_color: #000000;
-  // --danger_color: #6e1818be;
-  // --success_color: #0c8f58be;
-  // --link_color: #1d717e;
+  --primary_color: #ffffff;
+  --secondary_color: #000000;
+  --danger_color: #6e1818be;
+  --success_color: #0c8f58be;
+  --link_color: #1d717e;
+
+
+  
+  // --primary_color_bg: #000000;
+  // --secondary_color_bg: #ffffff;
+
+  // --primary_color_bg_trans: #000000ec;
+  // --secondary_color_bg_trans: #ffffff25;
+  // --placeholder_color: #ffffff5e;
+
+  // --primary_color: #000000;
+  // --secondary_color: #ffffff;
+
+  // --danger_color: #ff0808be;
+  // --success_color: #08ff98be;
+  // --link_color: #13d8f6;
 }
 
 * {
@@ -39,25 +43,49 @@
   // font-size: small;
   box-sizing: border-box;
   overflow-y: hidden;
-  font-size: larger;
-  font-weight: 600;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  font-weight: 800;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   div {
     transition: var(--transition_duration);
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+      border-radius: var(--borderRadius);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+      border-radius: var(--borderRadius);
+    }
+    &:hover {
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--secondary_color);
+      }
+    }
   }
 
   hr {
     width: 100%;
+    opacity: 0.4;
   }
   a {
     text-decoration: none;
   }
   @media screen and (min-width: 991px) {
-    font-weight: 400;
-    font-size: 0.8rem;
+    font-size: 0.83rem;
   }
 
   @media only screen and (min-width: 768px) and (max-width: 991px) {
-    font-weight: 400;
     font-size: small;
   }
 }

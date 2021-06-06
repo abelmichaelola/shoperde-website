@@ -41,7 +41,7 @@ export var StoreItem = (props:any) => {
   var index:number = props.index;
         var l = value.id;
   return (
-          <Link to={"" + l} key={index}>
+          <Link to={"" + l} key={index?index:""}>
             <div className={styles.item}>
               <img
                 className={styles.image}
@@ -53,7 +53,7 @@ export var StoreItem = (props:any) => {
                 }
               />
               <div className={styles.body}>
-                <div className={styles.name}>{value.name}</div>
+                <div className={styles.name}>{value.name?value.name:""}</div>
                 {value.location ? (
                   <div className={styles.location}>
                     {value.location?.address

@@ -1,4 +1,4 @@
-.AboutStore {
+.BoardPageSideView {
   height: calc(100vh - 5.5rem);
   overflow-y: scroll;
   scrollbar-width: none;
@@ -30,6 +30,7 @@
         padding: 1rem;
         text-align: center;
         font-size: 2rem;
+        margin: 1rem;
         font-family: var(--fontTypeBold), Courier, monospace;
       }
       .storeDet {
@@ -42,7 +43,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: -3rem;
     .storeLogoHolder {
       width: 100%;
       display: block;
@@ -144,6 +144,7 @@
       }
 
         &.linksView {
+            display: none;
       .ItemsHolder {
         display: flex;
         flex-direction: column;
@@ -211,5 +212,4 @@
 
 
     }
-  }
-}
+  }}

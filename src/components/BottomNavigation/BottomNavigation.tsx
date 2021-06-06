@@ -1,5 +1,5 @@
-import styles from './BottomNavigation.module.scss';
-import React, { Component } from 'react';
+import styles from "./BottomNavigation.module.scss";
+import React, { Component } from "react";
 import {
   BsHouseDoorFill,
   BsCompass,
@@ -7,10 +7,10 @@ import {
   BsClipboard,
   BsFillPersonFill,
 } from "react-icons/bs";
+import { FaShoppingCart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-interface Props {
-  
-}
+interface Props {}
 interface State {
   activeBtn: string;
 }
@@ -30,73 +30,88 @@ class BottomNavigation extends Component<Props, State> {
     this.setExplore = this.setExplore.bind(this);
     this.setSearch = this.setSearch.bind(this);
     this.setBoard = this.setBoard.bind(this);
+    this.setCart = this.setCart.bind(this);
     this.setAccount = this.setAccount.bind(this);
   }
 
-setHome() {
-      this.setState((state) => {
-        return {
-          activeBtn: "Home",
-        };
-      });
-  };
-  setExplore() {
-      this.setState((state) => {
-        return {
-          activeBtn: "Explore",
-        };
-      });
-  };
-  setSearch() {
-      this.setState((state) => {
-        return {
-          activeBtn: "Search",
-        };
-      });
-  };
-  setBoard() {
-      this.setState((state) => {
-        return {
-          activeBtn: "Board",
-        };
-      });
-  };
-  setAccount() {
-      this.setState((state) => {
-        return {
-          activeBtn: "Account",
-        };
-      });
-  };
-
-setStyles(activeBtnText: string) {
-  switch (activeBtnText) {
-    case this.state.activeBtn:
-      return setStylesMain(true);
-    default:
-      return setStylesMain(false);
+  setHome() {
+    this.setState((state) => {
+      return {
+        activeBtn: "Home",
+      };
+    });
   }
-};
+  setExplore() {
+    this.setState((state) => {
+      return {
+        activeBtn: "Explore",
+      };
+    });
+  }
+  setSearch() {
+    this.setState((state) => {
+      return {
+        activeBtn: "Search",
+      };
+    });
+  }
+  setBoard() {
+    this.setState((state) => {
+      return {
+        activeBtn: "Board",
+      };
+    });
+  }
+  setCart() {
+    this.setState((state) => {
+      return {
+        activeBtn: "Cart",
+      };
+    });
+  }
+  setAccount() {
+    this.setState((state) => {
+      return {
+        activeBtn: "Account",
+      };
+    });
+  }
+
+  setStyles(activeBtnText: string) {
+    switch (activeBtnText) {
+      case this.state.activeBtn:
+        return setStylesMain(true);
+      default:
+        return setStylesMain(false);
+    }
+  }
 
   render() {
     return (
       <div className={styles.BottomNavigation}>
-        <div
+        <Link
+          to={"/home"}
           className={styles.BtmNavItem + " " + this.setStyles("Home")}
           onClick={this.setHome}
         >
-          <BsHouseDoorFill size={"2rem"} />
-          <div className={styles.title}>Home</div>
-        </div>
+          <div>
+            <BsHouseDoorFill size={"2rem"} />
+            <div className={styles.title}>Home</div>
+          </div>
+        </Link>
 
-        <div
+        <Link
+          to={"/explore"}
           className={styles.BtmNavItem + " " + this.setStyles("Explore")}
           onClick={this.setExplore}
         >
-          <BsCompass size={"2rem"} />
-          <div className={styles.title}>Explore</div>
-        </div>
-        <div
+          <div>
+            <BsCompass size={"2rem"} />
+            <div className={styles.title}>Explore</div>
+          </div>
+        </Link>
+        <Link
+          to={"/search"}
           className={
             styles.BtmNavItem +
             " " +
@@ -106,27 +121,45 @@ setStyles(activeBtnText: string) {
           }
           onClick={this.setSearch}
         >
-          <BsSearch size={"2rem"} />
-          <div className={styles.title}>Search</div>
-        </div>
-        <div
+          <div>
+            <BsSearch size={"2rem"} />
+            <div className={styles.title}>Search</div>
+          </div>
+        </Link>
+        <Link
+          to={"/boards"}
           className={styles.BtmNavItem + " " + this.setStyles("Board")}
           onClick={this.setBoard}
         >
-          <BsClipboard size={"2rem"} />
-          <div className={styles.title}>Board</div>
-        </div>
-        <div
+          <div>
+            <BsClipboard size={"2rem"} />
+            <div className={styles.title}>Board</div>
+          </div>
+        </Link>
+        <Link
+          to={"/cart"}
+          className={styles.BtmNavItem + " " + this.setStyles("Cart")}
+          onClick={this.setCart}
+        >
+          <div>
+            <FaShoppingCart size={"2rem"} />
+            <div className={styles.title}>Carts</div>
+          </div>
+        </Link>
+        <Link
+          to={"/account"}
           className={styles.BtmNavItem + " " + this.setStyles("Account")}
+          style={{display:"none"}}
           onClick={this.setAccount}
         >
-          <BsFillPersonFill size={"2rem"} />
-          <div className={styles.title}>Account</div>
-        </div>
+          <div>
+            <BsFillPersonFill size={"2rem"} />
+            <div className={styles.title}>Account</div>
+          </div>
+        </Link>
       </div>
     );
   }
 }
 
-export default BottomNavigation
-
+export default BottomNavigation;

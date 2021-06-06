@@ -8,6 +8,7 @@ interface Props {
   products?: Product[] | CollectionProduct[];
   match?: any;
   location?: any;
+  horizontalScroll?:boolean;
 }
 interface State {}
 
@@ -25,13 +26,29 @@ class ProductGrid extends Component<Props, State> {
   }
 
   render() {
-    return <div className={styles.ProductGrid}>{this.listItems}</div>;
+    return (
+      <div
+        className={
+          this.props.horizontalScroll
+            ? styles.ProductGrid + " " + styles.scroll
+            : styles.ProductGrid + " scroller"
+        }
+      >
+        {this.listItems}
+      </div>
+    );
   }
 }
 const Item = (props: { key: any; product: Product; pathname:any; match:any}) => {
   return (
     <div className={styles.item}>
-      <Link to={props.match.url + "/product/" + props.product.id}>
+      <Link
+        to={
+          props.match.params.storeId
+            ? props.match.url + "/product/" + props.product.id
+            : "/product/" + props.product.id
+        }
+      >
         <div
           className={styles.image}
           style={{ backgroundImage: `url("` + props.product.imageLink + `")` }}

@@ -1,8 +1,8 @@
 export enum ModelType {
-  Store,
-  User,
-  Product,
-  Collection,
+  STORE,
+  USER,
+  PRODUCT,
+  COLLECTION,
+  COLLECTION_GROUP,
   Ads,
-  
 }

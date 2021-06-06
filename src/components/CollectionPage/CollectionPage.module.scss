@@ -1,4 +1,6 @@
 .CollectionPage {
+    height: inherit;
+    overflow-y: scroll;
   .topView {
     padding-top: 0.5rem;
     width: 100%;
@@ -11,15 +13,16 @@
     }
   }
   .titleView {
-    padding: 1rem 1rem 0.5rem 1rem;
+    padding: 1rem 1rem 1rem 1rem;
     .titleText {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       font-weight: 900;
     }
     .subTitleText {
+      display: none;
       font-size: 1.2rem;
-      font-weight: 700;
-      width: 70%;
+      font-weight: 500;
+      width: 100%;
       margin: 0.5rem 0rem 0rem 0.5rem;
       line-height: 1.3rem;
     }

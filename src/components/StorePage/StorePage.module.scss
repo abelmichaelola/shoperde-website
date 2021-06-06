@@ -28,10 +28,6 @@ cursor: pointer;
       margin-top: 0.5rem;
       display: block;
       height: 70rem;
-      padding-bottom: 10rem;
       overflow-y: scroll;
-      &::-webkit-scrollbar{
-        display: none;
-      }
   }
 }

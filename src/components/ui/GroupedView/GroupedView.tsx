@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { ModelType } from "../../../Controllers/ModelType";
 import { Collection } from "../../../Models/collection";
 import { Button, BUTTON_TYPES } from "../Button/Button";
@@ -24,7 +23,7 @@ class GroupedView extends Component<Props, State> {
   }
 
   render() {
-    if (this.props.dataType === ModelType.Collection) {
+    if (this.props.dataType === ModelType.COLLECTION) {
       return (
         <div className={styles.GroupedView}>
           <div className={styles.Header}>
@@ -36,15 +35,11 @@ class GroupedView extends Component<Props, State> {
             location={this.props.location}
           />
           <div className={styles.moreBtn}>
-            <Link
-              to={this.props.match.url + "/collection/" + this.collection.id}
-            >
-              <Button type={BUTTON_TYPES.TYPE_4} text="View More" />
-            </Link>
+              <Button type={BUTTON_TYPES.TYPE_4} text="View More" link={this.props.match.url + "/collection/" + this.collection.id} />
           </div>
         </div>
       );
-    } else if (this.props.dataType === ModelType.Product) {
+    } else if (this.props.dataType === ModelType.PRODUCT) {
       return (
         <div className={styles.GroupedView}>
           <div className={styles.Header}>
@@ -56,7 +51,7 @@ class GroupedView extends Component<Props, State> {
           </div>
         </div>
       );
-    } else if (this.props.dataType === ModelType.Store) {
+    } else if (this.props.dataType === ModelType.STORE) {
       return (
         <div className={styles.GroupedView}>
           <div className={styles.Header}>

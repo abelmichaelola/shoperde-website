@@ -1,5 +1,6 @@
-import React from 'react';
-import styles from './Button.module.scss';
+import React from "react";
+import { Link } from "react-router-dom";
+import styles from "./Button.module.scss";
 
 type Props = {
   type?: BUTTON_TYPES;
@@ -7,28 +8,37 @@ type Props = {
   leftIcon?: string;
   rightIcon?: string;
   visibility?: string;
+  link?: string;
 };
 type State = {
-  
+  view:any;
 };
 
-class Button extends React.Component<Props, State>{
- 
+class Button extends React.Component<Props, State> {
+  constructor(props:Props){
+super(props);
+this.state = {
+  view: (
+        <Link to={this.props.link? this.props.link:"/"}>
+          <div className={styles.Btn + " " + getStyle(this.props.type)}>
+            {this.props.text}
+          </div>
+        </Link>)
+
+}
+  }
   render() {
-    return (
-      <div className={styles.Btn + ' ' + getStyle(this.props.type)}>
-  {this.props.text}
-      </div>
-    );
-  };
-};
+    
+      return (this.state.view);
+  }
+}
 enum BUTTON_TYPES {
   TYPE_1,
   TYPE_2,
   TYPE_3,
   TYPE_4,
-  TYPE_5
-};
+  TYPE_5,
+}
 
 function getStyle(buttonType: any) {
   switch (buttonType) {
@@ -43,5 +53,5 @@ function getStyle(buttonType: any) {
     default:
       break;
   }
-};
-export {BUTTON_TYPES, Button};
+}
+export { BUTTON_TYPES, Button };
